@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Registration Form | CodingLab</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    .section {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .button button {
+      margin-left: 10px; 
+     /* Add some space between buttons */
+    }
+    .button {
+     
+     display: flex;
+     /* Align buttons to the right */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+        <form id="registrationForm" action="#">
+            <div class="education-details" id="educationDetails">
+                <!-- Graduation Details -->
+                <div class="section">
+                    <div class="section-title">Graduation Details</div>
+                    <div class="user-details graduation">
+                        <div class="input-box">
+                            <span class="details">Semester Id</span>
+                            <input type="text" class="degreeName" placeholder="Enter Semester Id" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Subject Name</span>
+                            <input type="text" class="marks" placeholder=" Subject Name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Marks</span>
+                            <input type="text" class="collegeName" placeholder="Enter Marks" required>
+                        </div>
+                        <div class="button ">
+                            <button class="addBtn" type="button"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+  <script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const addButtons = document.querySelectorAll(".addBtn");
+    const removeButtons = document.querySelectorAll(".removeBtn");
+
+    function addSection() {
+      const sections = document.querySelectorAll(".section");
+      const newIndex = sections.length + 1;
+
+      const section = document.createElement('div');
+      section.classList.add('section');
+      section.innerHTML = `
+        <div class="section-title">Section ${newIndex}</div>
+        <div class="user-details graduation">
+          <div class="input-box">
+            <span class="details">Semester Id</span>
+            <input type="text" class="degreeName" placeholder="Enter Semester Id" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Subject Name</span>
+            <input type="text" class="marks" placeholder=" Subject Name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Marks</span>
+            <input type="text" class="collegeName" placeholder="Enter Marks" required>
+          </div>
+          <div class="button" style="display: flex;">
+            <button class="addBtn" type="button"><i class="fas fa-plus"></i></button>
+            <button class="removeBtn" type="button"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+      `;
+
+      const addBtn = section.querySelector('.addBtn');
+      const removeBtn = section.querySelector('.removeBtn');
+
+      addBtn.addEventListener('click', addSection);
+      removeBtn.addEventListener('click', () => {
+        section.remove();
+        updateSectionIndexes();
+      });
+
+      document.getElementById('educationDetails').appendChild(section);
+    }
+
+    function updateSectionIndexes() {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((section, index) => {
+        const sectionTitle = section.querySelector('.section-title');
+        sectionTitle.textContent = `Section ${index + 1}`;
+      });
+    }
+
+    addButtons.forEach(button => {
+      button.addEventListener("click", addSection);
+    });
+
+    removeButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const section = button.closest('.section');
+        section.remove();
+        updateSectionIndexes();
+      });
+    });
+  });
+
+
+  </script>
+  
+</body> 
+</html>

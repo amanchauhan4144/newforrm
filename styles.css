@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #FFC3A0, #FFAFBD);
+
+
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #FFC3A0, #FFAFBD);
+
+}
+
+.content form .education-details {
+  margin-top: 20px;
+}
+
+.content form .section {
+  margin-bottom: 20px;
+}
+
+.content form .section-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.content form .user-details {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+.content form .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 3 - 20px);
+}
+
+.content form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.content form .input-box input {
+  height: 45px;
+  width: calc(100% - 50px); /* Adjusted width to accommodate padding */
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.content form .input-box input:focus,
+.content form .input-box input:valid {
+  border-color: #ce596d;
+}
+
+.content form .input-box button.close-btn {
+  margin-top: 5px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.content form .input-box button.close-btn:hover {
+  background-color: #c0392b;
+}
+
+.content form .button {
+  margin-top: 28px;
+}
+
+.content form .button button {
+  height: 45px;
+  width: 3rem;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #a36d4e, #ce596d);
+
+
+}
+
+.content form .button button:hover {
+  background: linear-gradient(135deg, #FFC3A0, #FFAFBD);
+
+
+}
+
+.button{
+  width: 5rem;
+}
+.addBtn,.removeBtn{
+  width: 2rem;
+}
+
+/* New CSS for education field */
+.content form .user-details .education-field {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.education-field {
+  margin-right: 1rem;
+}
+
+.content form .user-details .education-field span {
+  flex-grow: 1;
+}
+
+.content form .user-details .education-field button {
+  margin-left: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.content form .user-details .education-field button:hover {
+  background-color: #45a049;
+}
+
+/* Adjustments for smaller screens */
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .content form .input-box {
+    width: 100%;
+  }
+}
+
+@media(max-width: 459px) {
+  .content form .section {
+    margin-bottom: 15px;
+  }
+}
+
+#matriculationDegreeName,#graduationDegreeName,#postGraduationDegreeName{
+  height: 45px;
+    width: calc(100% - 15px);
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+
+}
